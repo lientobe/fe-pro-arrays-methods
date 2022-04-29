@@ -48,9 +48,9 @@ const osFilter = (os) => goods.filter(item => item.os === os);
  */
 const rangeFilter = (from, to) => goods.filter((item) => item.price >= from && item.price <= to);
 
-const minPriceReducer = () => goods.reduce((accumulator, good) => Math.min(accumulator, good.price), 0);
+const minPriceReducer = () => goods.reduce((accumulator, good) => Math.min(accumulator, good.price), Infinity);
 
-const maxPriceReducer = () => goods.reduce((accumulator, good) => Math.max(accumulator, good.price), 0);
+const maxPriceReducer = () => goods.reduce((accumulator, good) => Math.max(accumulator, good.price), -Infinity);
 
 const toMaxSorter = () => goods.sort((firstGood, secondGood) => secondGood.price - firstGood.price);
 
